@@ -16,7 +16,7 @@ class TokenJS {
 				"referer": "https://kahoot.it/",
 				"accept-language": "en-US,en;q=0.8",
 				"accept": "*/*",
-				"X-Forwarded-For":ip,
+				"x-forwarded-for":ip,
 			}
 		}, res => {
 			res.on("data", chunk => {
