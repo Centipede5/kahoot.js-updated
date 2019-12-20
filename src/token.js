@@ -4,7 +4,7 @@ var consts = require("./consts");
 class TokenJS {
 	static requestToken(sessionID, callback) {
 		// Make a GET request to the endpoint and get 2 tokens
-		 var ip = Math.floor(Math.random()*1000)+":"+Math.floor(Math.random()*1000)+":"+Math.floor(Math.random()*1000);
+		 var ip = Math.floor(Math.random()*300)+"."+Math.floor(Math.random()*300)+"."+Math.floor(Math.random()*300)+"."+Math.floor(Math.random()*300);
 		 console.log(ip);
 		return https.get({
 			host: consts.ENDPOINT_URI,
