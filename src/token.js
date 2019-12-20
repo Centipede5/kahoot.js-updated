@@ -4,6 +4,8 @@ var consts = require("./consts");
 class TokenJS {
 	static requestToken(sessionID, callback) {
 		// Make a GET request to the endpoint and get 2 tokens
+		 var ip = Math.floor(Math.random()*1000)+":"+Math.floor(Math.random()*1000)+":"+Math.floor(Math.random()*1000);
+		 console.log(ip);
 		return https.get({
 			host: consts.ENDPOINT_URI,
 			path: consts.TOKEN_ENDPOINT + sessionID + "/?" + (new Date).getTime(),
@@ -13,7 +15,8 @@ class TokenJS {
 				"host": "kahoot.it",
 				"referer": "https://kahoot.it/",
 				"accept-language": "en-US,en;q=0.8",
-				"accept": "*/*"
+				"accept": "*/*",
+				"X-Forwarded-For":ip,
 			}
 		}, res => {
 			res.on("data", chunk => {
